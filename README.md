@@ -9,6 +9,7 @@ The exercises are split by the language and their their degree of difficulty.
 Each 'ipynb' contains exercise(s) from codewars, their challenge & the test the code has to pass
 
 ## Folder Structure of the Repository:
+```
 ├── README.md       <- Top-level README for devs using this repository
 │ 
 ├── R 				<- All CodeWars Exercises for R 
@@ -34,3 +35,4 @@ Each 'ipynb' contains exercise(s) from codewars, their challenge & the test the 
 	├── 3Kata			<- Exercises in Python of difficulity '3' 
 	├── 2Kata			<- Exercises in Python of difficulity '2' 
 	└── 1Kata			<- Exercises in Python of difficulity '1' (hardest)
+```
