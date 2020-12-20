@@ -1,0 +1,91 @@
+---
+title: "Exercises of difficulty 8 in R"
+output: html_document
+---
+
+## Load needed Packages and set the 'Rmd' file up
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(testthat)
+```
+
+# 1. Reversed Strings
+Complete the solution so that it reverses the string passed into it.  
+Example:
+
+    'world'  =>  'dlrow'
+
+```{r}
+# Write the Function
+solution <- function(s) {
+    s_split         <- strsplit(s, split = "")[[1]]
+    s_split_reverse <- rev(s_split)
+    return(paste(s_split_reverse, collapse = ""))
+}
+```
+
+```{r}
+# Test it
+test_that("example", {
+  expect_equal(solution('world'), 'dlrow')
+  expect_equal(solution('hello'), 'olleh')
+  expect_equal(solution(''), '')
+  expect_equal(solution('h'), 'h')
+})
+```
+
+
+# 2. Beginner Series - Clock
+Clock shows 'h' hours, 'm' minutes and 's' seconds after midnight.  
+Your task is to make 'Past' function which returns time converted to milliseconds.  
+
+Example:
+
+    past(0, 1, 1) == 61000
+    
+Input constraints:
+
+    0 <= h <= 23, 0 <= m <= 59, 0 <= s <= 
+    
+    
+```{r}
+# Write Function
+past <- function(h, m, s) {
+    s_total <- s + 60 * m + 3600 * h # Convert time to seconds
+    return(s_total * 1000)           # Convert seconds to milliseconds
+}
+```
+
+```{r}
+test_that("basic tests", {
+  expect_equal(past(0, 1, 1), 61000)
+  expect_equal(past(1, 1, 1), 3661000)
+  expect_equal(past(0, 0, 0), 0)
+  expect_equal(past(1, 0, 1), 3601000)
+  expect_equal(past(1, 0, 0), 3600000)
+})
+```
+# 3. Square(n) Sum
+Complete the square sum function so that it squares each number passed into it and then sums the results together.  
+
+For example:
+    
+    [1, 2, 2] should return 9 because 1^2 + 2^2 + 2^2 = 9.
+```{r}
+# Write Function
+square_sum <- function(nums) {
+    return(sum(nums^2))
+}
+```
+```{r}
+# Test it
+test_that("basic tests", {
+  expect_equal(square_sum(c(1, 2)), 5)
+  expect_equal(square_sum(c(0, 3, 4, 5)), 50)
+  expect_equal(square_sum(c()), 0)
+  expect_equal(square_sum(c(-1, -2)), 5)
+  expect_equal(square_sum(c(-1, 0, 1)), 2)
+})
+```
+
+
