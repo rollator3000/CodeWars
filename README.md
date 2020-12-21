@@ -3,10 +3,9 @@ Various excerises from 'https://www.codewars.com/'
 
 ## Overview
 CodeWars offerst various exercises to train coding in different coding languages. Currently I'm only focusing on the languages 'R' & 'Python'.   
-The difficulty of the exercises ranges from '8Kata' to '1Kata', whereby the exercises with '8Kata' are the most simple ones & exercises with '1Kata' are the most complicated!  
-The exercises are split by the language and their their degree of difficulty.
-
-Each 'ipynb' contains exercise(s) from codewars, their challenge & the test the code has to pass
+The difficulty of the exercises ranges from '8Kata' - '1Kata', whereby the exercises with '8Kata' are the most simple ones & exercises with '1Kata' are the most complicated!  
+To each language and degree of difficulty there is a seperate 'ipynb'/ 'rmd' file. 
+Each file contains exercise(s) from codewars, their challenge, the test the code has to pass & an own solution
 
 ## Folder Structure of the Repository:
 ```
