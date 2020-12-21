@@ -36,14 +36,7 @@ or
 
 2) The rational given to decompose could be greater than one or equal to one, in which case the first "fraction" will be an integer (with an implicit denominator of 1). 
 
-```{r}
-# Write Function
-```
-
-
-
-
-```{r}
+```{r Write Function}
 decompose <- function(n) {
   options(digits=22)
   
@@ -64,8 +57,7 @@ decompose <- function(n) {
 }
 ```
 
-```{r}
-# Test it
+```{r Test it}
 dotest <- function(n, expected) {
   actual <- decompose(n)
   expect_equal(actual, expected)
@@ -76,6 +68,3 @@ test_that("tests", {
   dotest(12/4, "3")
 })
 ```
-
-
-
