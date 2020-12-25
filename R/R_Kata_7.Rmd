@@ -16,8 +16,7 @@ Given a string of digits confirm whether the sum of all the individual even digi
     - If the sum of odd numbers is greater than the sum of even numbers return: "Odd is greater than Even"
     - If the total of both even and odd numbers are identical return: "Even and Odd are the same"
 
-```{r}
-# Write Function
+```{r Write Function}
 even_or_odd <- function(s){
     
     # Split 's' to its single numerics
@@ -34,8 +33,7 @@ even_or_odd <- function(s){
 }
 ```
 
-```{r}
-# Test it
+```{r Test it}
 test_that("Sample tests", {
   expect_equal(even_or_odd('12'), 'Even is greater than Odd')
   expect_equal(even_or_odd('123'), 'Odd is greater than Even')
@@ -59,8 +57,7 @@ Note: a and b are not ordered!
     get_sum(-1, 2) == 2  # -1 + 0 + 1 + 2 = 2
     
     
-```{r}
-# Write Function
+```{r Write Function}
 get_sum <- function(a, b){
     if (a == b) {
         return(a)
@@ -70,8 +67,7 @@ get_sum <- function(a, b){
 }
 ```
     
-```{r}
-# Test it
+```{r Test it}
 test_that("Example", {
   expect_equal(get_sum(0, 1), 1)
   expect_equal(get_sum(0, -1), -1)
