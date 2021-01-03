@@ -110,13 +110,6 @@ anagrams <- function(word, words) {
   # Return elements of 'words' that are a anagram of 'word'
   words[anagram_idx]
 }
-
-word  = 'abba'
-words = c('aabb', 'abcd', 'bbaa', 'dada')
-
-word_letters
-
-
 ```
 ```{r Test-it}
 test_that("Sample Tests", {
