@@ -117,5 +117,68 @@ test_that("Sample Tests", {
   expect_equal(anagrams('racer', c('crazer', 'carer', 'racar', 'caers', 'racer')), c('carer', 'racer'))
 })
 ```
+# 3. Primes in numbers
+
+Given a positive number n > 1 find the prime factor decomposition of n. 
+The result will be a string with the following form :
+    
+    "(p1**n1)(p2**n2)...(pk**nk)"
+    
+    where 'a ** b' means a to the power of b
+
+with the p(i) in increasing order and n(i) empty if n(i) is 1.
+
+Example: 
+    
+    n = 86240 should return "(2**5)(5)(7**2)(11)"
+    
+```{r Write the Function}
+primeFactors <- function(n) {
+  # Define index 'i' & vector 'res' to store the primes of the decomposition
+  res <- c(); i <- 2
+  
+  # Do the factor decomposition for 'n'. Divide it by 'i' & if the result in a
+  # round numeric, update n to n/i - repeat this producere until n < i
+  while(n >= i) {
+    if ((n / i) %% 1 == 0) {
+      n = n / i
+      res = c(res, i)
+    } else {
+      i = i + 1
+    }
+  }
+  
+  # If 'res' is null, 'n' is a prime -> no decomposition possible -> return 'n'
+  # Else use 'res' to create the decomposition as a single string
+  if (is.null(res)) {
+    
+    return(paste0('(', n, ')'))
+  } else {
+    
+    tab_res <- table(res)
+    
+    ret_res <- paste(unlist(
+      lapply(seq_along(tab_res), FUN = function(x) {
+        paste0('(', names(tab_res[x]), "**" , tab_res[x], ')')
+      }
+      )), collapse = '')
+    
+    return(gsub('\\*\\*1)', ')',  ret_res))
+  }
+}
+```
+
+```{r Test-It}
+testing <- function(n, expected) {
+  actual <- primeFactors(n)
+  expect_equal(actual, expected)
+}
+
+test_that("tests", {
+  testing(7775460, "(2**2)(3**3)(5)(7)(11**2)(17)")
+  testing(7919, "(7919)")
+})
+```
+
 
 
