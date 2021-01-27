@@ -166,3 +166,28 @@ test_that("fixed tests", {
 })
 
 ```
+
+# 4. Love vs friendship
+If　a = 1, b = 2, c = 3 ... z = 26
+
+Then l + o + v + e                        = 54
+and f + r + i + e + n + d + s + h + i + p = 108
+
+So friendship is twice stronger than love :-)
+
+```{r Write Function}
+words_to_marks <- function(s){
+  return(sum(unlist(lapply(strsplit(s, split = "")[[1]], FUN = function(x) which(letters == x)))))
+}
+```
+
+```{r Test it}
+test_that("Example Tests", {
+  expect_equal(words_to_marks('attitude'), 100)
+  expect_equal(words_to_marks('friends'), 75)
+  expect_equal(words_to_marks('family'), 66)
+  expect_equal(words_to_marks('selfness'), 99)
+  expect_equal(words_to_marks('knowledge'), 96)
+})
+```
+
