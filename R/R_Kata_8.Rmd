@@ -92,7 +92,7 @@ Write function bmi that calculates body mass index (bmi = weight / height2).
 - if bmi <= 30.0 return "Overweight"
 - if bmi > 30 return "Obese"
 
-```{r}
+```{r Write Function}
 bmi <- function(weight, height) {
   bmi <- weight / height^2
   if (bmi <= 18.5) return("Underweight")
@@ -103,8 +103,34 @@ bmi <- function(weight, height) {
 
 ```
 
-```{r}
+```{r Test it}
 test_that("test", {
   expect_equal(bmi(80.0, 1.80), "Normal");
+})
+```
+# 4. Summation
+
+Write a program that finds the summation of every number from 1 to num. 
+The number will always be a positive integer greater than 0.
+
+### For example:
+
+    summation(2) -> 3
+    1 + 2
+
+    summation(8) -> 36
+    1 + 2 + 3 + 4 + 5 + 6 + 7 + 8
+```{r Write Function}
+summation <- function(n) {
+  return(sum(seq_len(n)))
+}
+```
+```{r Test it}
+test_that('basic tests', {
+  expect_equal(summation(1), 1)
+  expect_equal(summation(8), 36)
+  expect_equal(summation(22), 253)
+  expect_equal(summation(100), 5050)
+  expect_equal(summation(213), 22791)
 })
 ```
