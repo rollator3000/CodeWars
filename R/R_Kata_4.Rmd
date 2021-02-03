@@ -133,8 +133,55 @@ The following picture illustrates the example, and the 23 points are marked gree
     
 ```{r Write Function}
 rectangle_rotation <- function(a, b) {
-  # your code here
+  p_a_l <- floor((a / sqrt(2)) / 2) * 2 + 1 
+  p_b_l <- floor((b / sqrt(2)) / 2) * 2 + 1 
+  
+  p_a_s <- 2 * ceiling(((a/2) - sqrt(2)/2) / sqrt(2))
+  p_b_s <- 2 * ceiling(((b/2) - sqrt(2)/2) / sqrt(2))
+  
+  return(p_b_s * p_a_s + p_b_l * p_a_l)
 }
+
+# Thinking so far:
+# Possible Inputs from examples:
+a = 6; b = 4
+a = 8; b = 6
+
+# The points in the rectangle are on 2 group of straight lines:
+#   (1) Group: Lines go through - (-1, -1), (0, 0), (1, 1), ...
+#                               - (-1, 1), (0, 2), (1, 3), ...
+#                               - (1, -1), (2, 0), (3, 1), ...
+#   (2) Group: Lines go through - (-2, -1), (-1, 0), (0, 1), ...
+#                               - (-1, -2), (0, -1), (1, 0), ...
+# Both of these lines cover all 'points' in the square. 
+
+# The length of the fist Group can be determind by: ---
+a / sqrt(2) # Squares are coverd by the first group of lines 
+
+# As amount of points
+p_a_l <- floor((a / sqrt(2)) / 2) * 2 + 1 # equal as amount of points
+p_a_l
+
+# These Lines appear as often, as 'b' covers a whole block (width = sqrt(2))
+b / sqrt(2) # Amount of squares b covers
+p_b_l <- floor((b / sqrt(2)) / 2) * 2 + 1 # equal as amount of points
+p_b_l
+
+# --> Amount of points on the first group of lines
+p_a_l * p_b_l #--> Works fine for both examples above
+
+
+# The length of the second Group can be determind by: ---
+# # Amount of points 'a' cover on this group of lines
+p_a_s <- 2 * ceiling(((a/2) - sqrt(2)/2) / sqrt(2))
+p_a_s
+
+# These Lines appear as often, as 'b' covers a whole block (width = sqrt(2))
+p_b_s <- 2 * ceiling(((b/2) - sqrt(2)/2) / sqrt(2))
+p_b_s
+
+# --> Amount of points on the first group of lines
+p_a_s * p_b_s #--> Works fine for both examples above
 ```
 ```{r Test  it}
 test_that("basic tests", {
