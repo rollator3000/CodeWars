@@ -26,12 +26,12 @@ Each file contains exercise(s) from codewars, their challenge, the test the code
 └── Python			<- All CodeWars Exercises for Python
    │				   (seperate '.ipynb' for the various degrees of difficulty)
    │
-   ├── Py_Kata_8		<- Exercises in Python of difficulity '8' (easiest)
-   ├── Py_Kata_7		<- Exercises in Python of difficulity '7' 
-   ├── Py_Kata_6		<- Exercises in Python of difficulity '6' 
-   ├── Py_Kata_5		<- Exercises in Python of difficulity '5' 
-   ├── Py_Kata_4		<- Exercises in Python of difficulity '4' 
-   ├── Py_Kata_3		<- Exercises in Python of difficulity '3' 
-   ├── Py_Kata_2		<- Exercises in Python of difficulity '2' 
-   └── Py_Kata_1		<- Exercises in Python of difficulity '1' (hardest)
+   ├── Py_Kata_8		<- Exercises in Python of difficulity '8' --- 8
+   ├── Py_Kata_7		<- Exercises in Python of difficulity '7' --- 5
+   ├── Py_Kata_6		<- Exercises in Python of difficulity '6' --- 10
+   ├── Py_Kata_5		<- Exercises in Python of difficulity '5' --- 5
+   ├── Py_Kata_4		<- Exercises in Python of difficulity '4' --- 1
+   ├── Py_Kata_3		<- Exercises in Python of difficulity '3' --- 0
+   ├── Py_Kata_2		<- Exercises in Python of difficulity '2' --- 0
+   └── Py_Kata_1		<- Exercises in Python of difficulity '1' --- 0
 ```
