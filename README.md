@@ -26,7 +26,7 @@ Each file contains exercise(s) from codewars, their challenge, the test the code
 └── Python			<- All CodeWars Exercises for Python
    │				   (seperate '.ipynb' for the various degrees of difficulty)
    │
-   ├── Py_Kata_8		<- Exercises in Python of difficulity '8' --- 8
+   ├── Py_Kata_8		<- Exercises in Python of difficulity '8' --- 10
    ├── Py_Kata_7		<- Exercises in Python of difficulity '7' --- 5
    ├── Py_Kata_6		<- Exercises in Python of difficulity '6' --- 10
    ├── Py_Kata_5		<- Exercises in Python of difficulity '5' --- 5
