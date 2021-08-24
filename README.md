@@ -1,37 +1,41 @@
 # CodeWars
-Various excerises from 'https://www.codewars.com/'  
+Various excerises from 'https://www.codewars.com/' - only exercises for the languages 'R' & 'Python'.
 
 ## Overview
 CodeWars offerst various exercises to train coding in different coding languages. Currently I'm only focusing on the languages 'R' & 'Python'.   
 The difficulty of the exercises ranges from '8Kata' - '1Kata', whereby the exercises with '8Kata' are the most simple ones & exercises with '1Kata' are the most complicated!  
-To each language and degree of difficulty there is a seperate 'ipynb'/ '.rmd' file. 
-Each file contains exercise(s) from codewars, their challenge, the test the code has to pass & an own solution
+To each language and degree of difficulty there is a seperate 'ipynb'-file. Each file contains up to 10 exercise(s) from codewars, their challenge, the corresponding tests & my implemented solution
 
 ## Folder Structure of the Repository:
 ```
 ├── README.md       <- Top-level README for devs using this repository
 │ 
-├── R 				<- All CodeWars Exercises for R 
-│  │				   (seperate '.rmd' for the various degrees of difficulty)
-│  │
-│  ├── R_Kata_8	  	<- Exercises in R of difficulity '8' (easiest)
-│  ├── R_Kata_7		<- Exercises in R of difficulity '7' 
-│  ├── R_Kata_6		<- Exercises in R of difficulity '6' 
-│  ├── R_Kata_5		<- Exercises in R of difficulity '5' 
-│  ├── R_Kata_4		<- Exercises in R of difficulity '4' 
-│  ├── R_Kata_3		<- Exercises in R of difficulity '3' 
-│  ├── R_Kata_2		<- Exercises in R of difficulity '2' 
-│  └── R_Kata_1		<- Exercises in R of difficulity '1' (hardest)
+├── R 				<- All CodeWars Exercises for R (8 = easiest <-> 1 = hardest)
+│  ├── R_Kata_8	  	<- Exercises in R of difficulity '8' --- 05/10
+│  ├── R_Kata_7		<- Exercises in R of difficulity '7' --- 04/10
+│  ├── R_Kata_6		<- Exercises in R of difficulity '6' --- 06/10
+│  ├── R_Kata_5		<- Exercises in R of difficulity '5' --- 04/10
+│  ├── R_Kata_4		<- Exercises in R of difficulity '4' --- 02/10
+│  ├── R_Kata_3		<- Exercises in R of difficulity '3' --- 00/10
+│  ├── R_Kata_2		<- Exercises in R of difficulity '2' --- 00/10
+│  └── R_Kata_1		<- Exercises in R of difficulity '1' --- 00/10
 │
-└── Python			<- All CodeWars Exercises for Python
-   │				   (seperate '.ipynb' for the various degrees of difficulty)
-   │
-   ├── Py_Kata_8		<- Exercises in Python of difficulity '8' --- 10
-   ├── Py_Kata_7		<- Exercises in Python of difficulity '7' --- 5
-   ├── Py_Kata_6		<- Exercises in Python of difficulity '6' --- 10
-   ├── Py_Kata_5		<- Exercises in Python of difficulity '5' --- 5
-   ├── Py_Kata_4		<- Exercises in Python of difficulity '4' --- 1
-   ├── Py_Kata_3		<- Exercises in Python of difficulity '3' --- 0
-   ├── Py_Kata_2		<- Exercises in Python of difficulity '2' --- 0
-   └── Py_Kata_1		<- Exercises in Python of difficulity '1' --- 0
+└── Python			<- All CodeWars Exercises for Python (8 = easiest <-> 1 = hardest)
+   ├── Py_Kata_8		<- Exercises in Python of difficulity '8' --- 10/10
+   ├── Py_Kata_7		<- Exercises in Python of difficulity '7' --- 05/10
+   ├── Py_Kata_6		<- Exercises in Python of difficulity '6' --- 10/10
+   ├── Py_Kata_5		<- Exercises in Python of difficulity '5' --- 05/10
+   ├── Py_Kata_4		<- Exercises in Python of difficulity '4' --- 01/10
+   ├── Py_Kata_3		<- Exercises in Python of difficulity '3' --- 00/10
+   ├── Py_Kata_2		<- Exercises in Python of difficulity '2' --- 00/10
+   └── Py_Kata_1		<- Exercises in Python of difficulity '1' --- 00/10
+```
+
+## Enviroment Details
+To run R code from the jupyter notenooks, install the following enviroment
+```
+conda create -yn CodeWars r-base=3.5.1 r-irkernel python=3.7 notebook
+conda activate CodeWars
+conda install r-testthat
+jupyter notebook
 ```
