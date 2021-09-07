@@ -13,7 +13,7 @@ To each language and degree of difficulty there is a seperate 'ipynb'-file. Each
 ├── R 				<- All CodeWars Exercises for R (8 = easiest <-> 1 = hardest)
 │  ├── R_Kata_8	  	<- Exercises in R of difficulity '8' --- 06/10
 │  ├── R_Kata_7		<- Exercises in R of difficulity '7' --- 05/10
-│  ├── R_Kata_6		<- Exercises in R of difficulity '6' --- 06/10
+│  ├── R_Kata_6		<- Exercises in R of difficulity '6' --- 07/10
 │  ├── R_Kata_5		<- Exercises in R of difficulity '5' --- 05/10
 │  ├── R_Kata_4		<- Exercises in R of difficulity '4' --- 02/10
 │  ├── R_Kata_3		<- Exercises in R of difficulity '3' --- 00/10
@@ -32,10 +32,11 @@ To each language and degree of difficulty there is a seperate 'ipynb'-file. Each
 ```
 
 ## Enviroment Details
-To run R code from the jupyter notenooks, install the following enviroment
+To run R code from the jupyter notebooks, install the following enviroment:
 ```
 conda create -yn CodeWars r-base=3.5.1 r-irkernel python=3.7 notebook
 conda activate CodeWars
 conda install r-testthat
 jupyter notebook
 ```
+
