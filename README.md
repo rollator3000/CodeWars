@@ -13,7 +13,7 @@ To each language and degree of difficulty there is a seperate 'ipynb'-file. Each
 ├── R 				<- All CodeWars Exercises for R (8 = easiest <-> 1 = hardest)
 │  ├── R_Kata_8	  	<- Exercises in R of difficulity '8' --- 07/10
 │  ├── R_Kata_7		<- Exercises in R of difficulity '7' --- 05/10
-│  ├── R_Kata_6		<- Exercises in R of difficulity '6' --- 07/10
+│  ├── R_Kata_6		<- Exercises in R of difficulity '6' --- 08/10
 │  ├── R_Kata_5		<- Exercises in R of difficulity '5' --- 06/10
 │  ├── R_Kata_4		<- Exercises in R of difficulity '4' --- 02/10
 │  ├── R_Kata_3		<- Exercises in R of difficulity '3' --- 00/10
