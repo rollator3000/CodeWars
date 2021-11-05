@@ -10,7 +10,7 @@ To each language and degree of difficulty there is a seperate 'ipynb'-file. Each
 ```
 ├── README.md       <- Top-level README for devs using this repository
 │ 
-├── R 				<- All CodeWars Exercises for R (8 = easiest <-> 1 = hardest)
+├── R               <- All CodeWars Exercises for R (8 = easiest <-> 1 = hardest)
 │  ├── R_Kata_8	  	<- Exercises in R of difficulity '8' --- 10/10 / all fine
 │  ├── R_Kata_7		<- Exercises in R of difficulity '7' --- 07/10
 │  ├── R_Kata_6		<- Exercises in R of difficulity '6' --- 09/10
@@ -22,7 +22,7 @@ To each language and degree of difficulty there is a seperate 'ipynb'-file. Each
 │
 └── Python			<- All CodeWars Exercises for Python (8 = easiest <-> 1 = hardest)
    ├── Py_Kata_8		<- Exercises in Python of difficulity '8' --- 10/10 / all fine
-   ├── Py_Kata_7		<- Exercises in Python of difficulity '7' --- 09/10
+   ├── Py_Kata_7		<- Exercises in Python of difficulity '7' --- 09/10 / all fine / one exercise missing
    ├── Py_Kata_6		<- Exercises in Python of difficulity '6' --- 10/10
    ├── Py_Kata_5		<- Exercises in Python of difficulity '5' --- 06/10
    ├── Py_Kata_4		<- Exercises in Python of difficulity '4' --- 01/10
@@ -37,6 +37,7 @@ To run R code from the jupyter notebooks, install the following enviroment:
 conda create -yn CodeWars r-base=3.5.1 r-irkernel python=3.7 notebook
 conda activate CodeWars
 conda install r-testthat
+pip install pandas
 jupyter notebook
 ```
 
