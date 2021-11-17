@@ -14,7 +14,7 @@ To each language and degree of difficulty there is a seperate 'ipynb'-file. Each
 │  ├── R_Kata_8	  	<- Exercises in R of difficulity '8' --- 10/10 / all fine
 │  ├── R_Kata_7		<- Exercises in R of difficulity '7' --- 10/10 / all fine
 │  ├── R_Kata_6		<- Exercises in R of difficulity '6' --- 10/10 / all fine
-│  ├── R_Kata_5		<- Exercises in R of difficulity '5' --- 09/10
+│  ├── R_Kata_5		<- Exercises in R of difficulity '5' --- 09/10 / -> incl. 3 checked
 │  ├── R_Kata_4		<- Exercises in R of difficulity '4' --- 02/10
 │  ├── R_Kata_3		<- Exercises in R of difficulity '3' --- 00/10
 │  ├── R_Kata_2		<- Exercises in R of difficulity '2' --- 00/10
