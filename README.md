@@ -1,8 +1,6 @@
 ![alt text](https://w7.pngwing.com/pngs/477/603/png-transparent-codewars-button-icon.png)  
-Various programming challenges from 'https://www.codewars.com/' in 'R' & 'Python'  
-
-## Overview
-Codewars is a coding practice site for all programmers where you can learn various programming languages. It offers programming challenges in various languages, whereby the difficulty of the challenges ranges from '8Kata' *(easiest)* to '1Kata' *(hardest)*.   
+<br\> 
+https://www.codewars.com/ is a coding practice site for all programmers where you can learn various programming languages. It offers programming challenges in various languages, whereby the difficulty of the challenges ranges from **8Kata** *(easiest)* to **1Kata** *(hardest)*.   
 For each language and degree of difficulty there is a seperate 'ipynb'-file w/ exercise from codewars, their actual challene & corresponding tests, as well as my solution.  
 
 ## Folder Structure:
