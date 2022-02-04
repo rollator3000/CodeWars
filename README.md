@@ -1,30 +1,29 @@
-# CodeWars
-Various excerises from 'https://www.codewars.com/' - only exercises for the languages 'R' & 'Python'.
+![alt text](https://w7.pngwing.com/pngs/477/603/png-transparent-codewars-button-icon.png)  
+Various programming challenges from 'https://www.codewars.com/' in 'R' & 'Python'  
 
 ## Overview
-CodeWars offerst various exercises to train coding in different coding languages. Currently I'm only focusing on the languages 'R' & 'Python'.   
-The difficulty of the exercises ranges from '8Kata' - '1Kata', whereby the exercises with '8Kata' are the most simple ones & exercises with '1Kata' are the most complicated!  
-To each language and degree of difficulty there is a seperate 'ipynb'-file. Each file contains up to 10 exercise(s) from codewars, their challenge, the corresponding tests & my implemented solution
+Codewars is a coding practice site for all programmers where you can learn various programming languages. It offers programming challenges in various languages, whereby the difficulty of the challenges ranges from '8Kata' *(easiest)* to '1Kata' *(hardest)*.   
+For each language and degree of difficulty there is a seperate 'ipynb'-file w/ exercise from codewars, their actual challene & corresponding tests, as well as my solution.  
 
-## Folder Structure of the Repository:
+## Folder Structure:
 ```
 ├── README.md       <- Top-level README for devs using this repository
 │ 
-├── R               <- All CodeWars Exercises for R (8 = easiest <-> 1 = hardest)
-│  ├── R_Kata_8	  	<- Exercises in R of difficulity '8' --- 10/10 / all fine
-│  ├── R_Kata_7		<- Exercises in R of difficulity '7' --- 10/10 / all fine
-│  ├── R_Kata_6		<- Exercises in R of difficulity '6' --- 10/10 / all fine
-│  ├── R_Kata_5		<- Exercises in R of difficulity '5' --- 10/10 / all fine
-│  ├── R_Kata_4		<- Exercises in R of difficulity '4' --- 02/10
-│  ├── R_Kata_3		<- Exercises in R of difficulity '3' --- 00/10
-│  ├── R_Kata_2		<- Exercises in R of difficulity '2' --- 00/10
-│  └── R_Kata_1		<- Exercises in R of difficulity '1' --- 00/10
+├── R               <- R Challenges
+│  ├── R_Kata_8	  	<- Exercises in R of difficulity '8' --- 10 
+│  ├── R_Kata_7		<- Exercises in R of difficulity '7' --- 10
+│  ├── R_Kata_6		<- Exercises in R of difficulity '6' --- 10 
+│  ├── R_Kata_5		<- Exercises in R of difficulity '5' --- 10
+│  ├── R_Kata_4		<- Exercises in R of difficulity '4' --- 02
+│  ├── R_Kata_3		<- Exercises in R of difficulity '3' --- 00
+│  ├── R_Kata_2		<- Exercises in R of difficulity '2' --- 00
+│  └── R_Kata_1		<- Exercises in R of difficulity '1' --- 00
 │
-└── Python			<- All CodeWars Exercises for Python (8 = easiest <-> 1 = hardest)
-   ├── Py_Kata_8		<- Exercises in Python of difficulity '8' --- 10/10 / all fine
-   ├── Py_Kata_7		<- Exercises in Python of difficulity '7' --- 10/10 / all fine 
-   ├── Py_Kata_6		<- Exercises in Python of difficulity '6' --- 10/10 / all fine
-   ├── Py_Kata_5		<- Exercises in Python of difficulity '5' --- 07/10 / all fine
+└── Python			<- Python Challenges  
+   ├── Py_Kata_8		<- Exercises in Python of difficulity '8' --- 10
+   ├── Py_Kata_7		<- Exercises in Python of difficulity '7' --- 10 
+   ├── Py_Kata_6		<- Exercises in Python of difficulity '6' --- 10
+   ├── Py_Kata_5		<- Exercises in Python of difficulity '5' --- 07
    ├── Py_Kata_4		<- Exercises in Python of difficulity '4' --- 01/10
    ├── Py_Kata_3		<- Exercises in Python of difficulity '3' --- 00/10
    ├── Py_Kata_2		<- Exercises in Python of difficulity '2' --- 00/10
