@@ -8,7 +8,7 @@ For each language and degree of difficulty there is a seperate 'ipynb'-file w/ e
 ```
 ├── README.md       <- Top-level README for devs using this repository
 │ 
-├── R               <- R Challenges
+├── R 				<- R Challenges
 │  ├── R_Kata_8	  	<- Exercises in R of difficulity '8' --- 10 
 │  ├── R_Kata_7		<- Exercises in R of difficulity '7' --- 10
 │  ├── R_Kata_6		<- Exercises in R of difficulity '6' --- 10 
