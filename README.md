@@ -26,7 +26,7 @@ Currently I'm focusing on the languages **R**, **Python** und **SQL**
    ├── Py_Kata_7		<- Exercises in Python of difficulity '7' --- 10 
    ├── Py_Kata_6		<- Exercises in Python of difficulity '6' --- 10
    ├── Py_Kata_5		<- Exercises in Python of difficulity '5' --- 10
-   ├── Py_Kata_4		<- Exercises in Python of difficulity '4' --- 01
+   ├── Py_Kata_4		<- Exercises in Python of difficulity '4' --- 01 
    ├── Py_Kata_3		<- Exercises in Python of difficulity '3' --- 00
    ├── Py_Kata_2		<- Exercises in Python of difficulity '2' --- 00
    └── Py_Kata_1		<- Exercises in Python of difficulity '1' --- 00
