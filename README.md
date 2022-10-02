@@ -2,12 +2,15 @@
   
   
 https://www.codewars.com/ is a coding practice site for all programmers where you can learn various programming languages. It offers programming challenges in various languages, whereby the difficulty of the challenges ranges from **8Kata** *(easiest)* to **1Kata** *(hardest)*.   
-For each language and degree of difficulty there is a seperate 'ipynb'-file w/ exercise from codewars, their actual challene & corresponding tests, as well as my solution.  
+For each language and degree of difficulty there is a seperate file w/ exercise from codewars, their actual challenge & corresponding tests, as well as my solution.  
+Currently I'm focusing on the languages **R**, **Python** und **SQL**
 
 ## Folder Structure:
 ```
 ├── README.md       <- Top-level README for devs using this repository
-│ 
+│
+├── SQL			<- SQL Challenges 
+│
 ├── R 			<- R Challenges
 │  ├── R_Kata_8	  	<- Exercises in R of difficulity '8' --- 10 
 │  ├── R_Kata_7		<- Exercises in R of difficulity '7' --- 10
