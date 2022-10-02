@@ -1,7 +1,7 @@
-# CodeWars 'SQL for Beginners Series'
+# >> CodeWars 'SQL for Beginners Series' <<
 # (1) Adults only (SQL for Beginners #1)
-# In your application, there is a section for adults only. You need to get a list of names and ages
-# of users from the users table, who are 18 years old or older.
+#     In your application, there is a section for adults only. You need to get a list of 
+#     names and ages of users from the users table, who are 18 years old or older.
 
 # users table schema
 #	name
@@ -10,11 +10,12 @@ SELECT * FROM users
 	WHERE age >= 18
 
 # (2) On the Canadian Border (SQL for Beginners #2)
-# You are a border guard sitting on the Canadian border. You were given a list of travelers who have arrived
-# at your gate today. You know that American, Mexican, and Canadian citizens don't need visas, so they can
-# just continue their trips. You don't need to check their passports for visas! You only need to check the
-# passports of citizens of all other countries!
-# Select names, and countries of origin of all the travelers, excluding anyone from Canada, Mexico, or The US.
+#     You are a border guard sitting on the Canadian border. You were given a list of travelers who 
+#     have arrived at your gate today. You know that American, Mexican, and Canadian citizens don't 
+#	  need visas, so they can just continue their trips. You don't need to check their passports for
+#     visas! You only need to check the passports of citizens of all other countries!
+#     Select names, and countries of origin of all the travelers, excluding anyone from Canada, 
+#     Mexico, or The US.
 
 # travelers table schema
 # 	name
@@ -24,12 +25,38 @@ SELECT * FROM travelers
 
 
 # (3) Register for the Party (SQL for Beginners #3)
-# You received an invitation to an amazing party. Now you need to write an insert statement to add yourself 
-# to the table of participants.
+#     You received an invitation to an amazing party. Now you need to write an insert statement to add 
+#     yourself to the table of participants.
 
 # participants table schema
 # 	name (string)
 # 	age (integer)
 # 	attending (boolean)
 INSERT INTO participants (name, age, attending)
-       VALUES ('Klaus', 29, true)
+    VALUES ('Klaus', 29, true)
+
+# (4) You are working for a local school, and you are responsible for collecting tuition from students. 
+#     You have a list of all students, some of them have already paid tution and some haven't. 
+#     Write a select statement to get a list of all students who haven't paid their tuition yet. 
+#     The list should include all the data available about these students.
+
+# students table schema
+#    name (string)
+#    age (integer)
+#    semester (integer)
+#    mentor (string)
+#    tuition_received (Boolean)
+SELECT * FROM students
+  	WHERE NOT tuition_received
+
+# (5) You work at a book store. It's the end of the month, and you need to find out the 5 bestselling
+#     books at your store. Use a select statement to list names, authors, and number of copies sold 
+#     of the 5 books which were sold most.
+
+# books table schema
+#    name
+#    author
+#    copies_sold
+SELECT * FROM books
+  	ORDER BY copies_sold DESC
+	LIMIT 5
