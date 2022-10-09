@@ -45,5 +45,6 @@ SELECT BIT_LENGTH(name) + LENGTH(race) AS calculation FROM demographics
 #	people_id
 
 # You should return all people fields as well as the toy count as "toy_count".
-- TOM -DO
-
+SELECT *,
+  (SELECT COUNT(*) FROM toys WHERE people.id = toys.people_id) AS toy_count
+   FROM people
