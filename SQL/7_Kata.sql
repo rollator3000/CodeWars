@@ -19,7 +19,7 @@ SELECT REPEAT(name, 3) AS name,
 	   REVERSE(characteristics) AS characteristics
 	   FROM monsters
 
-# 7-2) SQL Basics: Maths with String Manipulations
+# 7-2 SQL Basics: Maths with String Manipulations
 # Given a demographics table in the following format:
 
 # demographics table schema
@@ -31,7 +31,7 @@ SELECT REPEAT(name, 3) AS name,
 # Return a single column named calculation where the value is the bit length of name, added to the number of characters in race.
 SELECT BIT_LENGTH(name) + LENGTH(race) AS calculation FROM demographics
 
-# 7-3) SQL Basics: Simple JOIN with COUNT
+# 7-3 SQL Basics: Simple JOIN with COUNT
 # For this challenge you need to create a simple SELECT statement that will return all columns from the people table, 
 # and join to the toys table so that you can return the COUNT of the toys
 
@@ -48,3 +48,37 @@ SELECT BIT_LENGTH(name) + LENGTH(race) AS calculation FROM demographics
 SELECT *,
   (SELECT COUNT(*) FROM toys WHERE people.id = toys.people_id) AS toy_count
    FROM people
+
+# 7-4 First and last IP in a network
+# Given a table where users' connections are logged, find the first and the last address of the
+# networks they connected from.
+
+# Notes
+# - Order the result by the id column
+# - There's no need to validate anything - it's okay if the user connects from a private network
+#   (You don't need the connection_time field for this task but without it the input data looks too dull)
+# - You can read more about IPv4 on Wikipedia 
+
+# Input table
+# ---------------------------------------------
+# |    Table    |     Column      |   Type    |
+# |-------------+-----------------+-----------|
+# | connections | id              | int       |
+# |             | connection_time | timestamp |
+# |             | ip_address      | inet      |
+# ---------------------------------------------
+
+# Output table
+# ------------------------
+# |    Column     | Type |
+# |---------------+------|
+# | id            | int  |
+# | first_address | text |
+# | last_address  | text |
+# ------------------------
+SELECT id,
+	   network(ip_address) as first_address,
+  	   broadcast(ip_address) AS last_address
+	FROM connections
+	ORDER BY id
+
