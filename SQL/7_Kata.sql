@@ -94,3 +94,11 @@ SELECT id,
 # result of number1 + number2 truncated towards zero.
 SELECT TRUNC(number1+number2) as towardzero
 	FROM decimals
+
+# Alternativly (if you don't know TRUNC)
+SELECT CASE 
+          WHEN number1 + number2 > 0 
+             THEN FLOOR(number1 + number2)
+          ELSE CEILING(number1 + number2)
+       END as towardzero
+	FROM decimals
