@@ -102,3 +102,20 @@ SELECT CASE
           ELSE CEILING(number1 + number2)
        END as towardzero
 	FROM decimals
+
+# 7-6 Concatenating Columns
+# Given the table 'names' below:
+#	id
+#	prefix
+#	first
+#	last
+#	suffix
+
+# Your task is to use a select statement to return a single column table containing the full 
+# title of the person (concatenate all columns together except id), as follows (don't forget to add spaces):
+
+# 	title
+SELECT CONCAT(prefix, ' ', first, ' ', last, ' ', suffix) AS title 
+  from names
+
+
