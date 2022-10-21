@@ -10,8 +10,8 @@
 # 	characteristics
 
 # return the following table:
-#	name
-#	characteristics
+  #	name
+  #	characteristics
 
 # Where the name is the original string repeated three times (do not add any spaces), 
 # and the characteristics are the original strings in reverse (e.g. 'abc, def, ghi' becomes 'ihg ,fed ,cba').
@@ -23,10 +23,10 @@ SELECT REPEAT(name, 3) AS name,
 # Given a demographics table in the following format:
 
 # demographics table schema
-#	id
-#	name
-#	birthday
-#	race
+  #	id
+  #	name
+  #	birthday
+  #	race
 
 # Return a single column named calculation where the value is the bit length of name, added to the number of characters in race.
 SELECT BIT_LENGTH(name) + LENGTH(race) AS calculation FROM demographics
@@ -36,13 +36,13 @@ SELECT BIT_LENGTH(name) + LENGTH(race) AS calculation FROM demographics
 # and join to the toys table so that you can return the COUNT of the toys
 
 # people table schema
-#	id
-#	name
+  #	id
+  #	name
 
 # toys table schema
-#	id
-#	name
-#	people_id
+  #	id
+  #	name
+  #	people_id
 
 # You should return all people fields as well as the toy count as "toy_count".
 SELECT *,
@@ -86,9 +86,9 @@ SELECT id,
 # Given the following table 'decimals':
 
 # decimals table schema
-#	id
-#	number1
-#	number2
+  #	id
+  #	number1
+  #	number2
 
 # Return a table with a single column towardzero where the values are the 
 # result of number1 + number2 truncated towards zero.
@@ -105,11 +105,11 @@ SELECT CASE
 
 # 7-6 Concatenating Columns
 # Given the table 'names' below:
-#	id
-#	prefix
-#	first
-#	last
-#	suffix
+  #	id
+  #	prefix
+  #	first
+  #	last
+  #	suffix
 
 # Your task is to use a select statement to return a single column table containing the full 
 # title of the person (concatenate all columns together except id), as follows (don't forget to add spaces):
@@ -118,4 +118,48 @@ SELECT CASE
 SELECT CONCAT(prefix, ' ', first, ' ', last, ' ', suffix) AS title 
   from names
 
+# 7-7 GROCERY STORE: Logistic Optimisation
+# You are the owner of the Grocery Store. All your products are in the database, that you have created after CodeWars SQL excercises!:)
+# You have reached a conclusion that you waste to much time because you have to many different warehouse to visit each week.
+# You have to find out how many different type of products you buy from each producer - if you take only few items from some of them you 
+# will stop going there to save the gasoline:)
 
+# In the results show producer and count_products_types which you buy from him.
+# Order the result by count_products_types (DESC) then by producer (ASC) in case there are duplicate amounts
+
+# products table schema
+  # id
+  # name
+  # price
+  # stock
+  # producer
+
+# results table schema
+  # count_products_types
+  # producer
+SELECT COUNT(stock) AS count_products_types, producer FROM products
+  GROUP BY producer
+  ORDER BY count_products_types DESC, producer ASC
+
+# 7-8 GROCERY STORE: Support Local Products
+# You are the owner of the Grocery Store. All your products are in the database, that you have created after CodeWars SQL excercises!:)
+# You care about local market, and want to check how many products come from United States of America or Canada.
+# Please use SELECT statement and IN to filter out other origins.
+# In the results show how many products are from United States of America and Canada respectively.
+# Order by number of products, descending.
+
+# products table schema
+  # id
+  # name
+  # price
+  # stock
+  # producer
+  # country
+
+# results table schema
+  # products
+  # country
+SELECT country, COUNT(*) AS products FROM products
+  WHERE country IN ('Canada', 'United States of America')
+  GROUP BY country
+  ORDER BY products DESC
