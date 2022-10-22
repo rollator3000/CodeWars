@@ -11,7 +11,7 @@ Currently I'm focusing on the languages **R**, **Python** und **SQL**
 │
 ├── SQL			<- SQL Challenges 
 │  ├── Beginners-Series <- Series from CodeWars to start with SQL --- 06 
-│  └── 7_Kata	  	    <- Exercises in SQL of difficulity '7'    --- 08
+│  └── 7_Kata	  	    <- Exercises in SQL of difficulity '7'    --- 10
 │
 ├── R 			<- R Challenges
 │  ├── R_Kata_8	  	<- Exercises in R of difficulity '8' --- 10 

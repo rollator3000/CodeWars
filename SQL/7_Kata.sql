@@ -163,3 +163,37 @@ SELECT country, COUNT(*) AS products FROM products
   WHERE country IN ('Canada', 'United States of America')
   GROUP BY country
   ORDER BY products DESC
+
+# 7-9 Easy SQL: Counting and Grouping
+# Given a demographics table in the following format:
+
+# demographics table schema
+  # id
+  # name
+  # birthday
+  # race
+
+# you need to return a table that shows a count of each race represented, 
+# ordered by the count in descending order as:
+
+# output table schema
+  # race
+  # count
+SELECT race, 
+       COUNT(*) AS count 
+  FROM demographics
+  GROUP BY race 
+  ORDER BY count DESC
+
+# 7-10 SQL Basics: Raise to the Power
+# Given the following table 'decimals':
+
+# decimals table schema
+  # id
+  # number1
+  # number2
+
+# Return a table with a single column result which is the output of 
+# number1 raised to the power of number2.
+SELECT POWER(number1, number2) AS result
+  FROM decimals
