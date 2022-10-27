@@ -51,3 +51,19 @@ UNION ALL
 SELECT 'EU', * FROM eusales
 	WHERE price>50
 ORDER BY location DESC, id ASC
+
+# 6-3 SQL Basics: Simple HAVING 
+# For this challenge you need to create a simple HAVING statement, you want to count how many 
+# people have the same age and return the groups with 10 or more people who have that age.
+
+# people table schema
+#  id
+#  name
+#  age
+
+#return table schema
+#  age
+#  total_people
+SELECT age, COUNT(*) as total_people FROM people
+  GROUP BY age
+  HAVING COUNT(*) > 9
