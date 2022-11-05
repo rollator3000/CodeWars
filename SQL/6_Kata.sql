@@ -109,3 +109,50 @@ SELECT EXTRACT(MONTH FROM payment_date)        AS month,
   FROM payment
   GROUP BY month
   ORDER BY month
+
+# 6-5 Analyzing the sales by product and date
+# Given the information about sales in a store, calculate the total revenue for each day, month, year, and product.
+# Notes
+# - The sales table stores only the dates for which any data has been recorded - the information about individual 
+#   sales (what was sold, and when) is stored in the sales_details table instead
+# - The sales_details table stores totals per product per date
+# - Order the result by the product_name, year, month, day columns
+# - We're interested only in the product-specific data, so you shouldn't return the total revenue from all sales
+
+# Input tables
+# ----------------------------------------
+# |    Table      |   Column   |  Type   |
+# |---------------+------------+---------|
+# | products      | id         | int     |
+# |               | name       | text    |
+# |               | price      | numeric |
+# |---------------+------------+---------|
+# | sales         | id         | int     |
+# |               | date       | date    |
+# |---------------+------------+---------|
+# | sales_details | id         | int     |
+# |               | sale_id    | int     |
+# |               | product_id | int     |
+# |               | count      | int     |
+# ----------------------------------------
+
+# Output table
+# --------------------------
+# |    Column    |  Type   |
+# |--------------+---------|
+# | product_name | text    |
+# | year         | int     |
+# | month        | int     |
+# | day          | int     |
+# | total        | numeric |
+# --------------------------
+SELECT name                          AS product_name,
+  	   EXTRACT(year from date)::int  AS year,
+  	   EXTRACT(month from date)::int AS month,
+  	   EXTRACT(day from date)::int   AS day,
+  	   SUM(price * count)            AS total
+FROM sales_details 
+JOIN sales    ON sales_details.sale_id    = sales.id
+JOIN products ON sales_details.product_id = products.id
+GROUP BY name, rollup(year, month, day)
+ORDER BY product_name, year, month, day
