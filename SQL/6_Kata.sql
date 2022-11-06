@@ -156,3 +156,23 @@ JOIN sales    ON sales_details.sale_id    = sales.id
 JOIN products ON sales_details.product_id = products.id
 GROUP BY name, rollup(year, month, day)
 ORDER BY product_name, year, month, day
+
+# 6-6 Subqueries master
+# The objective of this Kata is to show that you are proficient at string manipulation 
+# (and perhaps that you can use extensively subqueries).
+
+# You will use people table but will focus solely on the name column
+# name: Greyson Tate Lebsack Jr. - Elmore Clementina O'Conner
+
+# Will be provided with a full name and you have to return the name in columns as follows.
+# name:              Greyson       Elmore
+# first_lastname:    Tate          Clementina
+# second_lastname:   Lebsack Jr.   O'Conner
+
+# Note: Don't forget to remove spaces around names in your result. 
+# Note: Due to multicultural context, if full name has more than 3 words, consider first 2 as name
+SELECT
+  SUBSTRING(name, '^(.+)\s\S+\s\S+$') AS name,
+  SUBSTRING(name, '^.+\s(\S+)\s\S+$') AS first_lastname,
+  SUBSTRING(name, '^.+\s(\S+)$')      AS second_lastname
+FROM people
