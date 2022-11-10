@@ -23,3 +23,24 @@ SELECT s,
        n,
        REPEAT(s, n) AS res
 FROM repeatstr
+
+# 8-3 Opposite number
+# Very simple, given an integer or a floating-point number, find its opposite.
+# Examples:
+# 	  1: -1
+# 	 14: -14
+# 	-34:  34
+
+# You will be given a table: opposite, with a column: number. 
+# Return a table with a column: res.
+# LONG
+SELECT CASE
+        WHEN number = 0 THEN 0
+        WHEN number > 0 THEN -number
+        WHEN number < 0 THEN -number
+       END AS res
+FROM opposite
+
+# SHORT
+SELECT -number AS res FROM opposite
+
