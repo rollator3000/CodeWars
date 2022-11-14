@@ -44,3 +44,19 @@ FROM opposite
 # SHORT
 SELECT -number AS res FROM opposite
 
+# 8-4 Remove First and Last Character
+# It's pretty straightforward. Your goal is to create a function that removes the first and 
+# last characters of a string. You're given one parameter, the original string. 
+# You don't have to worry with strings with less than two characters.
+# -- You are given a table 'removechar' with column 's', 
+#    return a table with column 's' and your result in a column named 'res'
+SELECT s, CASE 
+           WHEN LENGTH(s) < 3 THEN ''
+           ELSE SUBSTRING(s, 2, LENGTH(s) - 2)
+          END AS res
+       FROM removechar
+
+
+# 8-5 Is it a palindrome?
+# Write a function that checks if a given string (case insensitive) is a palindrome.
+
