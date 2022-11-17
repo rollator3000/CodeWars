@@ -1,6 +1,5 @@
 ![alt text](https://w7.pngwing.com/pngs/477/603/png-transparent-codewars-button-icon.png)  
   
-  
 https://www.codewars.com/ is a web-site for all programmers that want to practice their coding in various programming languages. It offers programming challenges in various languages, whereby the difficulty of the challenges ranges from **8Kata** *(easiest)* to **1Kata** *(hardest)*.   
 For each language and degree of difficulty there is a seperate file w/ exercises from codewars. To each exercise we have the actual challenge & corresponding tests, as well as my personal solution to it.    
 Currently I'm focusing on the languages **R**, **Python** & **SQL**.
@@ -11,7 +10,7 @@ Currently I'm focusing on the languages **R**, **Python** & **SQL**.
 │
 ├── SQL			<- SQL Challenges 
 │  ├── Beginners-Series <- Series from CodeWars to start with SQL --- 06 
-│  ├── 8_Kata	  	    <- Exercises in SQL of difficulity '8'    --- 03
+│  ├── 8_Kata	  	    <- Exercises in SQL of difficulity '8'    --- 05
 │  ├── 7_Kata	  	    <- Exercises in SQL of difficulity '7'    --- 10
 │  └── 6_Kata	  	    <- Exercises in SQL of difficulity '6'    --- 07
 │

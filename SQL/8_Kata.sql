@@ -56,7 +56,24 @@ SELECT s, CASE
           END AS res
        FROM removechar
 
+# 8-5 Will you make it?
+# You were camping with your friends far away from home, but when it's time to go back, 
+# you realize that your fuel is running out and the nearest pump is 50 miles away! 
+# You know that on average, your car runs on about 25 miles per gallon. There are 2 gallons left.
+# Considering these factors, write a function that tells you if it is possible to get to the pump or not.
 
-# 8-5 Is it a palindrome?
+# Write your SQL statement here: you are given a table 'zerofuel' with columns 
+# 'distance_to_pump', 'mpg' and 'fuel_left', return a table with all the columns 
+# and your result in a column named 'res'.
+SELECT distance_to_pump,
+       mpg,
+       fuel_left,
+       CASE 
+        WHEN (mpg * fuel_left) < distance_to_pump THEN false
+        ELSE true
+       END AS res
+    FROM zerofuel
+
+# 8-6 Is it a palindrome?
 # Write a function that checks if a given string (case insensitive) is a palindrome.
 
