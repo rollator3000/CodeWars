@@ -76,4 +76,8 @@ SELECT distance_to_pump,
 
 # 8-6 Is it a palindrome?
 # Write a function that checks if a given string (case insensitive) is a palindrome.
-
+# You are given a table 'ispalindrome' with column 'str', return a table with column 
+# 'str' and your result in a column named 'res'.
+SELECT str, 
+       REVERSE(LOWER(str)) = LOWER(str) AS res
+FROM ispalindrome
