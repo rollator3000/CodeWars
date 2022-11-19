@@ -9,7 +9,7 @@ Currently I'm focusing on the languages **R**, **Python** & **SQL**.
 ├── README.md       <- Top-level README for devs using this repository
 │
 ├── SQL			<- SQL Challenges 
-│  ├── Beginners-Series <- Series from CodeWars to start with SQL --- 06 
+│  ├── Beginners-Series <- Series from CodeWars to start with SQL --- 07 
 │  ├── 8_Kata	  	    <- Exercises in SQL of difficulity '8'    --- 05
 │  ├── 7_Kata	  	    <- Exercises in SQL of difficulity '7'    --- 10
 │  └── 6_Kata	  	    <- Exercises in SQL of difficulity '6'    --- 07
