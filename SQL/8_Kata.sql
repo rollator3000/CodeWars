@@ -1,28 +1,28 @@
 # (8) SQL Exercises with 8-KYU
-# (8-1) Third Angle of a Triangle --------------------------------------------
-# You are given two interior angles (in degrees) of a triangle. Write a 
-# function to return the 3rd. Note: only positive integers will be tested.
+# (8-1) Third Angle of a Triangle ----------------------------------------------
+# You are given two interior angles (in degrees) of a triangle. Write a function
+# to return the 3rd. Note: only positive integers will be tested.
 
 # You are given a table 'otherangle' with columns 'a' and 'b'.
-# return a table with these columns and your result in a column named 'res'.
+# Return a table with these columns and your result in a column named 'res'.
 SELECT a,
 	     b,
 	     (180 - (a + b)) AS res
 FROM otherangle
 
-# (8-2) String repeat --------------------------------------------------------
+# (8-2) String repeat ----------------------------------------------------------
 # Write a function that accepts an integer n and a string s as parameters and
 # returns a string of s repeated exactly n times.
 
-# Write your SQL statement here: you are given a table 'repeatstr' with 
-# columns 'n' and 's'. Return a table with all columns and your result in a 
-# column named 'res'.
+# Write your SQL statement here: you are given a table 'repeatstr' with columns
+# 'n' and 's'. Return a table with all columns and your result in a column named
+# 'res'.
 SELECT s,
        n,
        REPEAT(s, n) AS res
 FROM repeatstr
 
-# (8-3) Opposite number ------------------------------------------------------
+# (8-3) Opposite number --------------------------------------------------------
 # Very simple, given an integer or a floating-point number, find its opposite.
 # Examples:
 # 	  1: -1
@@ -43,7 +43,7 @@ FROM opposite
 SELECT -number AS res 
 FROM opposite
 
-# (8-4) Remove First and Last Character --------------------------------------
+# (8-4) Remove First and Last Character ----------------------------------------
 # It's pretty straightforward. Your goal is to create a function that removes 
 # the first and  last characters of a string. You're given one parameter, the 
 # original string. You don't have to worry with strings with less than two 
@@ -58,7 +58,7 @@ SELECT s,
        END AS res
 FROM removechar
 
-# (8-5) Will you make it? ----------------------------------------------------
+# (8-5) Will you make it? ------------------------------------------------------
 # You were camping with your friends far away from home, but when it's time to 
 # go back, you realize that your fuel is running out and the nearest pump is 
 # 50 miles away! You know that on average, your car runs on about 25 miles per
@@ -77,7 +77,7 @@ SELECT distance_to_pump,
        END AS res
 FROM zerofuel
 
-# (8-6) Is it a palindrome? --------------------------------------------------
+# (8-6) Is it a palindrome? ----------------------------------------------------
 # Write a function that checks if a string (case insensitive) is a palindrome.
 
 # You are given a table 'ispalindrome' with column 'str', return a table with
@@ -86,7 +86,7 @@ SELECT str,
        REVERSE(LOWER(str)) = LOWER(str) AS res
 FROM ispalindrome
 
-# (8-7) Remove exclamation marks ---------------------------------------------
+# (8-7) Remove exclamation marks -----------------------------------------------
 # Write function RemoveExclamationMarks which removes all exclamation marks 
 # from a given string.
 
@@ -95,3 +95,22 @@ FROM ispalindrome
 SELECT s,
        REPLACE(s, '!', '') AS res
 FROM removeexclamationmarks
+
+# (8-8) Keep Hydrated! ---------------------------------------------------------
+# Nathan loves cycling. Because Nathan knows it is important to stay hydrated, 
+# he drinks 0.5 litres of water per hour of cycling. You get given the time in 
+# hours and you need to return the number of litres Nathan will drink, rounded 
+# to the smallest value.
+# For example:
+#   hours = 3 ----> liters = 1
+#   hours = 6.7---> liters = 3
+#   hours = 11.8--> liters = 5
+
+# You have to return 3 columns: id, hours and liters 
+SELECT id, 
+       hours,
+       FLOOR(hours / 2) AS liters
+FROM cycling
+
+
+
