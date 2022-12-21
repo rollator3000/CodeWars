@@ -112,5 +112,17 @@ SELECT id,
        FLOOR(hours / 2) AS liters
 FROM cycling
 
+# (8-9) Simple multiplication
+# This kata is about multiplying a given number by eight if it is an even number 
+# and by nine otherwise.
+# Write your SQL statement here: you are given a table 'multiplication' with col
+# 'number', return a table with col 'number' & your result in a col named 'res'.
+SELECT number,
+       CASE
+        WHEN mod(number, 2) = 0 THEN number * 8
+        WHEN mod(number, 2) != 0 THEN number * 9
+       END AS res
+FROM multiplication
+
 
 
