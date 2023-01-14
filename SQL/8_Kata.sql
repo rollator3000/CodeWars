@@ -134,3 +134,32 @@ FROM numbers
 SELECT s,
        UPPER(s) AS res
 FROM makeuppercase
+
+# (8-11) Simple multiplication -------------------------------------------------
+# This kata is about multiplying a given number by eight if it is an even number 
+# and by nine otherwise.
+# Write your SQL statement here: you are given a table 'multiplication' with col
+# 'number', return a table with col 'number' & your result in a col named 'res'.
+SELECT number,
+       CASE
+        WHEN mod(number, 2) = 0 THEN number * 8
+        WHEN mod(number, 2) != 0 THEN number * 9
+       END AS res
+FROM multiplication
+
+# (8-12) Quarter of the year ---------------------------------------------------
+# Given a month as an integer from 1 to 12, return to which quarter of the year 
+# it belongs as an integer number. For example: month 2 (February), is part of 
+# the first quarter; month 6 (June), is part of the second quarter; and month 
+# 11 (November), is part of the fourth quarter.
+
+# You are given a table 'quarterof' with column 'month', return a table with
+# column 'month' and your result in a column named 'res'.
+SELECT month, 
+       CASE
+        WHEN month <= 3  THEN 1
+        WHEN month <= 6  THEN 2
+        WHEN month <= 9  THEN 3
+        WHEN month <= 12 THEN 4
+      END AS res
+FROM quarterof
