@@ -112,5 +112,25 @@ SELECT id,
        FLOOR(hours / 2) AS liters
 FROM cycling
 
+# (8-9) Even or Odd ------------------------------------------------------------
+# You will be given a table, numbers, with one column number.
+# Return a table with a column is_even containing "Even" or "Odd" depending on 
+# number column values.
 
+# numbers table schema
+#   number INT
+# output table schema
+#   is_even STRING
+SELECT CASE
+        WHEN MOD(number, 2) = 0 THEN 'Even'
+        ELSE 'Odd'
+       END AS is_even
+FROM numbers
 
+ # (8-10) MakeUpperCase --------------------------------------------------------
+ # Write a function which converts the input string to uppercase.
+ # You are given a table 'makeuppercase' with column 's', 
+ # return a table with column 's' and your result in a column named 'res'.
+SELECT s,
+       UPPER(s) AS res
+FROM makeuppercase
