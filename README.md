@@ -6,7 +6,7 @@ Currently I'm focusing on the languages **R**, **Python** & **SQL**.
 
 ## Folder Structure:
 ```
-├── README.md       <- Top-level README for devs using this repository
+├── README.md  <- Top-level README for devs using this repository
 │
 ├── SQL			<- SQL Challenges 
 │  ├── Beginners-Series <- Series from CodeWars to start with SQL --- 06 
@@ -17,30 +17,26 @@ Currently I'm focusing on the languages **R**, **Python** & **SQL**.
 ├── R 			<- R Challenges
 │  ├── R_Kata_8	  	<- Exercises in R of difficulity '8' --- 12
 │  ├── R_Kata_7		<- Exercises in R of difficulity '7' --- 12
-│  ├── R_Kata_6		<- Exercises in R of difficulity '6' --- 10 
+│  ├── R_Kata_6		<- Exercises in R of difficulity '6' --- 11  
 │  ├── R_Kata_5		<- Exercises in R of difficulity '5' --- 10
-│  ├── R_Kata_4		<- Exercises in R of difficulity '4' --- 02
-│  ├── R_Kata_3		<- Exercises in R of difficulity '3' --- 00
-│  ├── R_Kata_2		<- Exercises in R of difficulity '2' --- 00
-│  └── R_Kata_1		<- Exercises in R of difficulity '1' --- 00
+│  └── R_Kata_4		<- Exercises in R of difficulity '4' --- 02
 │
 └── Python		<- Python Challenges  
    ├── Py_Kata_8		<- Exercises in Python of difficulity '8' --- 10
    ├── Py_Kata_7		<- Exercises in Python of difficulity '7' --- 10 
    ├── Py_Kata_6		<- Exercises in Python of difficulity '6' --- 10
    ├── Py_Kata_5		<- Exercises in Python of difficulity '5' --- 10
-   ├── Py_Kata_4		<- Exercises in Python of difficulity '4' --- 01 
-   ├── Py_Kata_3		<- Exercises in Python of difficulity '3' --- 00
-   ├── Py_Kata_2		<- Exercises in Python of difficulity '2' --- 00
-   └── Py_Kata_1		<- Exercises in Python of difficulity '1' --- 00
+   └── Py_Kata_4		<- Exercises in Python of difficulity '4' --- 01 
 ```
 
 ## Enviroment Details
 To run R code from the jupyter notebooks, install the following enviroment:
 ```
-conda create -yn CodeWars r-base=3.5.1 r-irkernel python=3.7 notebook
+conda create -n CodeWars
 conda activate CodeWars
-conda install r-testthat
-pip install pandas
-jupyter notebook
+conda install r-recommended r-irkernel
+conda install Jupyter
+R -e 'IRkernel::installspec()'
+conda install r-testthat # 'testthat'-package for R
+jupyter-notebook 
 ```
