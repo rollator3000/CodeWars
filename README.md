@@ -17,7 +17,7 @@ Currently I'm focusing on the languages **R**, **Python** & **SQL**.
 ├── R 			<- R Challenges
 │  ├── R_Kata_8	  	<- Exercises in R of difficulity '8' --- 12
 │  ├── R_Kata_7		<- Exercises in R of difficulity '7' --- 12
-│  ├── R_Kata_6		<- Exercises in R of difficulity '6' --- 11  
+│  ├── R_Kata_6		<- Exercises in R of difficulity '6' --- 12  
 │  ├── R_Kata_5		<- Exercises in R of difficulity '5' --- 10
 │  └── R_Kata_4		<- Exercises in R of difficulity '4' --- 02
 │
