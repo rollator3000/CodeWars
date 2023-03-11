@@ -10,8 +10,8 @@ Currently I'm focusing on the languages **R**, **Python** & **SQL**.
 │
 ├── SQL			<- SQL Challenges 
 │  ├── Beginners-Series <- Series from CodeWars to start with SQL --- 06 
-│  ├── 8_Kata	  	      <- Exercises in SQL of difficulity '8'    --- 10
-│  ├── 7_Kata	  	      <- Exercises in SQL of difficulity '7'    --- 10
+│  ├── 8_Kata	  	      <- Exercises in SQL of difficulity '8'    --- 12
+│  ├── 7_Kata	  	      <- Exercises in SQL of difficulity '7'    --- 12
 │  └── 6_Kata	  	      <- Exercises in SQL of difficulity '6'    --- 07
 │
 ├── R 			<- R Challenges
