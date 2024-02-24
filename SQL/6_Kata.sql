@@ -1,26 +1,25 @@
 # (6) SQL Exercises with 6-KYU
 # 6-1 SQL Basics: Simple JOIN and RANK
-# For this challenge you need to create a simple SELECT statement that will return all columns from 
-# the people table, and join to the sales table so that you can return the COUNT of all sales and RANK 
-# each person by their sale_count.
+# For this challenge you need to create a simple SELECT statement that will return all columns from the people table, 
+# and join to the sales table so that you can return the COUNT of all sales and RANK each person by their sale_count.
 
-# people table schema
-#  id
-#  name
+# (1) people table schema
+#  - id
+#  - name
 
-# sales table schema
-#  id
-#  people_id
-#  sale
-#  price
+# (2) sales table schema
+#  - id
+#  - people_id
+#  - sale
+#  - price
 
 # Return all people fields as well as the sale count as "sale_count" and the rank as "sale_rank".
 SELECT people.*,
-       COUNT(sales) as sale_count, 
-       RANK() OVER (ORDER BY sum(sales.price) DESC) as sale_rank
+       COUNT(sales) as sale_count,                               -- Count the amount of sales
+       RANK() OVER (ORDER BY sum(sales.price) DESC) as sale_rank -- create ranging based on the sum of sales
   FROM people
-  JOIN sales ON sales.people_id = people.id
-  GROUP BY people.id
+  JOIN sales ON sales.people_id = people.id -- join the sales information
+  GROUP BY people.id                        -- group over persons
 
 # 6-2 SQL Basics: Simple UNION ALL
 # For this challenge you need to create a UNION statement, there are two tables ussales and eusales 
@@ -28,22 +27,22 @@ SELECT people.*,
 # the sale price so it only returns rows with a sale greater than 50.00. You have been tasked with 
 # combining that data for future analysis. Order by location (US before EU), then by id.
 
-# (us/eu)sales table schema
-#   id
-#   name
-#   price
-#   card_name
-#   card_number
-#   transaction_date
+# (1) (us/eu)sales table schema
+# - id
+# - name
+# - price
+# - card_name
+# - card_number
+# - transaction_date
 
-# resultant table schema
-#   location (EU for eusales and US for ussales)
-#   id
-#   name
-#   price
-#   card_name
-#   card_number
-#   transaction_date
+# (2) resultant table schema
+#  - location (EU for eusales and US for ussales)
+#  - id
+#  - name
+#  - price
+#  - card_name
+#  - card_number
+#  - transaction_date
 SELECT 'US' AS location, *
 	FROM ussales
 	WHERE price>50
@@ -56,17 +55,18 @@ ORDER BY location DESC, id ASC
 # For this challenge you need to create a simple HAVING statement, you want to count how many 
 # people have the same age and return the groups with 10 or more people who have that age.
 
-# people table schema
-#  id
-#  name
-#  age
+# (1) people table schema
+# - id
+# - name
+# - age
 
-#return table schema
-#  age
-#  total_people
-SELECT age, COUNT(*) as total_people FROM people
-  GROUP BY age
-  HAVING COUNT(*) > 9
+# return table schema
+# - age
+# - total_people
+SELECT age, 
+       COUNT(*) as total_people FROM people -- Count the amount of people
+  GROUP BY age                              -- group it by the age
+  HAVING COUNT(*) > 9                       -- and only keep groups > 9 (HAVING = WHERE for GroupBy)
 
 # 6-4 Conditional Count
 # Given a payment table, which is a part of DVD Rental Sample Database, with the following schema:
@@ -99,20 +99,20 @@ SELECT age, COUNT(*) as total_people FROM people
 # - mike_amount  - total amount of payments accepted by Mike (staff_id = 1)
 # - jon_count    - total number of payments accepted by Jon (staff_id = 2)
 # - jon_amount   - total amount of payments accepted by Jon (staff_id = 2)
-SELECT EXTRACT(MONTH FROM payment_date)        AS month,
-       COUNT(*)                                AS total_count,
-       SUM(amount)                             AS total_amount,
-       COUNT(*)    FILTER (WHERE staff_id = 1) AS mike_count,
-       SUM(amount) FILTER (WHERE staff_id = 1) AS mike_amount,
-       COUNT(*)    FILTER (WHERE staff_id = 2) AS jon_count,
-       SUM(amount) FILTER (WHERE staff_id = 2) AS jon_amount
+SELECT EXTRACT(MONTH FROM payment_date)        AS month,         -- Get the month from the payment date
+       COUNT(*)                                AS total_count,   -- Count amount of payments
+       SUM(amount)                             AS total_amount,  -- Get the sum of payments
+       COUNT(*)    FILTER (WHERE staff_id = 1) AS mike_count,    -- Count the amount of payments at Mike's
+       SUM(amount) FILTER (WHERE staff_id = 1) AS mike_amount,   -- Get the sum of payment's at Mike's
+       COUNT(*)    FILTER (WHERE staff_id = 2) AS jon_count,     -- Count the amount of payments at Jon's
+       SUM(amount) FILTER (WHERE staff_id = 2) AS jon_amount     -- Get the sum of payment's at Jon's
   FROM payment
   GROUP BY month
   ORDER BY month
 
 # 6-5 Analyzing the sales by product and date
 # Given the information about sales in a store, calculate the total revenue for each day, month, year, and product.
-# Notes
+# Notes:
 # - The sales table stores only the dates for which any data has been recorded - the information about individual 
 #   sales (what was sold, and when) is stored in the sales_details table instead
 # - The sales_details table stores totals per product per date
@@ -146,13 +146,13 @@ SELECT EXTRACT(MONTH FROM payment_date)        AS month,
 # | day          | int     |
 # | total        | numeric |
 # --------------------------
-SELECT name                          AS product_name,
-  	   EXTRACT(year from date)::int  AS year,
+SELECT name                          AS product_name, -- Name of the product
+  	   EXTRACT(year from date)::int  AS year,         -- Extract year, month and day from date
   	   EXTRACT(month from date)::int AS month,
   	   EXTRACT(day from date)::int   AS day,
-  	   SUM(price * count)            AS total
+  	   SUM(price * count)            AS total         -- Total spending
 FROM sales_details 
-JOIN sales    ON sales_details.sale_id    = sales.id
+JOIN sales    ON sales_details.sale_id    = sales.id   
 JOIN products ON sales_details.product_id = products.id
 GROUP BY name, rollup(year, month, day)
 ORDER BY product_name, year, month, day
@@ -162,12 +162,14 @@ ORDER BY product_name, year, month, day
 # (and perhaps that you can use extensively subqueries).
 
 # You will use people table but will focus solely on the name column
-# name: Greyson Tate Lebsack Jr. - Elmore Clementina O'Conner
+# name: 
+#  - Greyson Tate Lebsack Jr.
+#  - Elmore Clementina O'Conner
 
 # Will be provided with a full name and you have to return the name in columns as follows.
-# name:              Greyson       Elmore
-# first_lastname:    Tate          Clementina
-# second_lastname:   Lebsack Jr.   O'Conner
+# - name:              Greyson       Elmore
+# - first_lastname:    Tate          Clementina
+# - second_lastname:   Lebsack Jr.   O'Conner
 
 # Note: Don't forget to remove spaces around names in your result. 
 # Note: Due to multicultural context, if full name has more than 3 words, consider first 2 as name
@@ -181,16 +183,16 @@ FROM people
 # For this challenge you need to create a simple query to display each unique clan with their total 
 # points and ranked by their total points. 
 
-# people table schema
-#  name
-#  points
-#  clan
+# (1) people table schema
+# - name
+# - points
+# - clan
 
 # You should then return a table that resembles below select on
-#	rank
-#	clan
-#	total_points
-#	total_people
+#	- rank
+#	- clan
+#	- total_points
+#	- total_people
 
 # The query must rank each clan by their total_points, you must return each unqiue clan and if there is no clan name 
 # (i.e. it's an empty string) you must replace it with [no clan specified], you must sum the total_points for each clan 

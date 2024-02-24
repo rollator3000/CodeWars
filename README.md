@@ -16,18 +16,18 @@ Currently I'm focusing on the languages **R**, **Python** & **SQL**.
 │  └── 6_Kata           <- Exercises in SQL of difficulity '6'    --- 08
 │
 ├── R <- R Challenges
-│  ├── R_Kata_8      <- Exercises in R of difficulity '8' --- 12
-│  ├── R_Kata_7      <- Exercises in R of difficulity '7' --- 12
-│  ├── R_Kata_6      <- Exercises in R of difficulity '6' --- 12  
-│  ├── R_Kata_5      <- Exercises in R of difficulity '5' --- 12
-│  └── R_Kata_4      <- Exercises in R of difficulity '4' --- 04
+│  ├── R_Kata_8         <- Exercises in R of difficulity '8' --- 12
+│  ├── R_Kata_7         <- Exercises in R of difficulity '7' --- 12
+│  ├── R_Kata_6         <- Exercises in R of difficulity '6' --- 12  
+│  ├── R_Kata_5         <- Exercises in R of difficulity '5' --- 12
+│  └── R_Kata_4         <- Exercises in R of difficulity '4' --- 04
 │
 └── Python <- Python Challenges  
-   ├── Py_Kata_8     <- Exercises in Python of difficulity '8' --- 12
-   ├── Py_Kata_7     <- Exercises in Python of difficulity '7' --- 12 
-   ├── Py_Kata_6     <- Exercises in Python of difficulity '6' --- 12
-   ├── Py_Kata_5     <- Exercises in Python of difficulity '5' --- 12
-   └── Py_Kata_4     <- Exercises in Python of difficulity '4' --- 01 
+   ├── Py_Kata_8        <- Exercises in Python of difficulity '8' --- 12
+   ├── Py_Kata_7        <- Exercises in Python of difficulity '7' --- 12 
+   ├── Py_Kata_6        <- Exercises in Python of difficulity '6' --- 12
+   ├── Py_Kata_5        <- Exercises in Python of difficulity '5' --- 12
+   └── Py_Kata_4        <- Exercises in Python of difficulity '4' --- 01 
 ```
 ## Enviroment Details
 To run R code from the jupyter notebooks, install the following enviroment:
