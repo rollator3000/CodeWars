@@ -253,3 +253,32 @@ WHERE cert_finish - CURRENT_DATE <= 14      -- only keep those contracts that ru
     WHERE CERT_FINISH - CURRENT_DATE > 14 
   )
 ORDER BY customers.name, certs.ssn, certs.cert_num ASC -- order the results
+
+# 6-9 Youngest Team Members
+# You are working with a database that stores information about employees in a tech firm. 
+# The database includes a table named employees with the following columns:
+# - employee_id: A unique integer identifier for each employee.
+# - full_name:   A string representing the employee's full name.
+# - team:        A string that specifies which team the employee is part of("backend", "frontend", "devops", or "design")
+#- birth_date:   A date that represents the employee's birthdate.
+
+# The company is planning an event where the youngest employee from each team will be given a chance to share their vision of future technology trends.
+# Your task is to write an SQL query that retrieves the complete record for the youngest member of each team. 
+# You should consider the person with the latest birthdate as the youngest. Let's assume for this task that the are no youngest employees who share the same birthdate.
+
+# The classical solution of using aggregate function and group by is forbidden. Can you come up with something more witty?
+
+# The result should be ordered by team in asc alphabetical order.
+
+# The desired output should look like this:
+
+# employee_id   full_name     team      birth_date
+#    11         John Doe      backend   1980-12-01
+#    7          Jane Smith    design    1985-05-03
+#    24         Bob Jones     devops    1990-04-15
+#    54         Dana Smith    frontend  1995-05-03
+
+# 'DISTINCT ON' --> will only return one entrance per 'team'
+SELECT DISTINCT ON (team) employee_id, full_name, team, birth_date
+       FROM employees
+ORDER BY team, birth_date DESC
