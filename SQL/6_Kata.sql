@@ -282,3 +282,70 @@ ORDER BY customers.name, certs.ssn, certs.cert_num ASC -- order the results
 SELECT DISTINCT ON (team) employee_id, full_name, team, birth_date
        FROM employees
 ORDER BY team, birth_date DESC
+
+# 6-10 Reporting on House Maintenance Tasks Completion
+# A home maintenance company uses a database to keep track of tasks that need to be performed at various houses. 
+# The database has two tables: 
+# 1) house_tasks: contains a list of tasks scheduled for each house identified by a house_id. 
+#   - task_id (int, primary key): A unique identifier for each task.
+#   - house_id (int)            : The identifier of the house for which the task is scheduled.
+#   - task_name (varchar)       : The name of the task to be performed.
+
+# 2) task_status: racks the progress of each task, including a description and its current status.
+#   - id (int, primary key): A unique identifier for each task status record.
+#   - task_id (int)        : The identifier of the task which this status relates to.
+#   - description (varchar): A brief description of the task status.
+#   - task_status (varchar): The current status of the task; it can be 'Completed', 'In Progress', or NULL if the status has not been set.
+
+# Write a SQL query that generates a report for each house. The report should include the following columns:
+
+# - house_id        : The identifier of the house.
+# - total_tasks     : The total number of tasks scheduled for the house.
+# - completed_tasks : The number of tasks that have been completed. 
+#                     A task is considered completed if all of its corresponding statuses in the task_status table are set to 'Completed'.
+# - incomplete_tasks: The number of tasks that are not completed. 
+#                     A task is considered incomplete if any of its statuses are not 'Completed' or if the task does not have any status record in the task_status table.
+# The result should be ordered by house_id in descending order.
+
+# For this sample data:
+'house_tasks:
+| task_id | house_id | task_name |
++---------+----------+-----------+
+| 1       | 1        | Paint     |
+| 2       | 1        | Plumb     |
+| 3       | 1        | Garden    |
+| 4       | 2        | Electric  |
+| 5       | 2        | Roof      |
+| 6       | 3        | Cleanup   |
+| 7       | 4        | Extra Work|
+
+task_status:
+| task_id | description | task_status |
++---------+-------------+-------------+
+| 1       | Desc 1      | Completed   |
+| 1       | Desc 2      | Completed   |
+| 1       | Desc 3      | Completed   |
+| 2       | Desc 4      | In Progress |
+| 2       | Desc 5      | In Progress |
+| 3       | Desc 6      | In Progress |
+| 3       | Desc 7      | Completed   |
+| 4       | Desc 8      | Completed   |
+| 5       | Desc 9      | NULL        |
+| 7       | Desc 10     | NULL        |
+| 7       | Desc 11     | Completed   |
+
+desired output:
+| house_id | total_tasks | completed_tasks | incomplete_tasks |
++----------+-------------+-----------------+------------------+
+| 4        | 1           | 0               | 1                |
+| 3        | 1           | 0               | 1                |
+| 2        | 2           | 1               | 1                |
+| 1        | 3           | 1               | 2                |
+'
+SELECT house_id, 
+       COUNT(DISTINCT task_id)                                                                                   AS total_tasks, 
+       COUNT(DISTINCT task_id) - COUNT(DISTINCT task_id) FILTER (WHERE task_status IS DISTINCT FROM 'Completed') AS completed_tasks,
+       COUNT(distinct task_id) FILTER(WHERE task_status IS DISTINCT FROM 'Completed')                            AS incomplete_tasks
+FROM house_tasks LEFT JOIN task_status
+GROUP BY house_id
+ORDER BY house_id DESC
