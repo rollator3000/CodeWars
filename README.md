@@ -13,7 +13,7 @@ Currently I'm focusing on the languages **R**, **Python** & **SQL**.
 │  ├── Beginners-Series <- Series from CodeWars to start with SQL --- 06 
 │  ├── 8_Kata           <- Exercises in SQL of difficulity '8'    --- 12
 │  ├── 7_Kata           <- Exercises in SQL of difficulity '7'    --- 12
-│  └── 6_Kata           <- Exercises in SQL of difficulity '6'    --- 10
+│  └── 6_Kata           <- Exercises in SQL of difficulity '6'    --- 11
 │
 ├── R <- R Challenges
 │  ├── R_Kata_8         <- Exercises in R of difficulity '8' --- 12
